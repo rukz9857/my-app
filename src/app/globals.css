@@ -1,85 +1,318 @@
-* {
+/* --- CoKarma Custom Header Styles --- */
+
+/* Reset body margins if not already done */
+body {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+  /* We can refine fonts later */
+  background-color: #f9f9f9;
 }
 
-body {
-  font-family: Arial, sans-serif;
+/* Header Wrapper to hold top bar + main nav + promo banner */
+.header-wrapper {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1000;
 }
 
-/* Navbar */
-
-.navbar {
-  background: white;
-  padding: 20px;
+/* Phase 2: Top Utility Bar */
+.top-utility-bar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 8px 10%;
+  background-color: #fcfbfa;
+  /* Off-white background from Figma */
+  border-bottom: 1px solid #eaeaea;
+  font-size: 13px;
+  color: #555555;
+}
+
+.utility-left {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.utility-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #555555;
+}
+
+.utility-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.utility-icons {
+  display: flex;
+  gap: 12px;
+  font-size: 16px;
+}
+
+.top-search-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f1f1;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.top-search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 12px;
+  width: 80px;
+}
+
+/* Phase 3: Main Navbar Fixes */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #ffffff;
+}
+
+.logo img {
+  display: block;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
+.nav-links li {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-links li:hover {
+  color: #8b0000;
+  /* Subtle dark red hover shift */
+}
+
+/* Figma-accurate Login/Signup Pill Button */
 .login-btn {
-  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 8px 18px;
+  border-radius: 25px;
+  /* Gives it the clean pill/oval look */
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Hero Section */
+.login-btn:hover {
+  background-color: #f7f7f7;
+  border-color: #adadad;
+}
 
+/* Phase 4: Red Promotional Banner */
+.promo-banner {
+  background: linear-gradient(90deg, #8B0000 0%, #A31D1D 100%);
+  /* Deep maroon crimson tint matching Figma */
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.promo-banner a {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+/* Phase 5: Hero Section Updates */
 .hero {
-  height: 500px;
-  background: url('/hello.png.png') no-repeat center center;
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  /* Gives space for the overlapping card coming next */
+  background-image: url('/hello.png.png');
+  /* Pulling your asset from public folder */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.overlay {
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Dark mask to pop white text copy */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding-top: 180px;
+  padding: 0 20px;
 }
 
-.overlay h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
+.hero h1 {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 700;
+  max-width: 800px;
+  line-height: 1.3;
+  margin: 0 0 8px 0;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-.overlay button {
-  padding: 10px 20px;
-  background: red;
-  color: white;
+.hero p {
+  color: #dddddd;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 24px 0;
+}
+
+.hero-btn {
+  background-color: #A31D1D;
+  color: #ffffff;
   border: none;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-/* Visit Form */
+.hero-btn:hover {
+  background-color: #8B0000;
+}
+
+/* Phase 6: Floating Visit Form Layout */
+.visit-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  margin-top: -60px;
+  /* Pulls the card upwards onto the hero section */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
 
 .visit-form {
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
+  background: #ffffff;
+  width: 100%;
+  max-width: 1100px;
+  /* Keeps the card contained like the design */
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  /* Drop shadow effect */
 }
 
+.visit-form h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222222;
+  margin: 0 0 4px 0;
+  font-family: system-ui, sans-serif;
+}
+
+.visit-form .form-subtitle {
+  font-size: 13px;
+  color: #888888;
+  margin: 0 0 24px 0;
+}
+
+/* Align inputs and button horizontally in a clean row grid */
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  margin-top: 15px;
+  grid-template-columns: repeat(4, 1fr) auto;
+  /* 4 uniform fields + 1 custom button width */
+  gap: 16px;
+  align-items: center;
 }
 
 .form-grid input,
-.form-grid select,
-.form-grid button {
-  padding: 10px;
+.form-grid select {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333333;
+  background-color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
 }
 
+.form-grid input:focus,
+.form-grid select:focus {
+  border-color: #A31D1D;
+  /* Active red focus outline */
+}
+
+/* Styled crimson request action button */
 .form-grid button {
-  background: red;
-  color: white;
+  height: 48px;
+  padding: 0 32px;
+  background-color: #A31D1D;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
   border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.form-grid button:hover {
+  background-color: #8B0000;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visit-form-container {
+    margin-top: -20px;
+  }
 }

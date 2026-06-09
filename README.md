@@ -1,28 +1,4 @@
-# My App
-
-A modern Next.js application with TypeScript, featuring a responsive design with custom components.
-
-## Features
-
-- ⚡ Built with [Next.js](https://nextjs.org) and React
-- 🎨 TypeScript support
-- 📦 ESLint configured
-- 🎯 Custom components (Hero, Navbar, VisitForm)
-- 💅 PostCSS styling
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── layout.tsx      # Root layout
-│   ├── page.tsx        # Home page
-│   └── globals.css     # Global styles
-└── components/
-    ├── Hero.tsx        # Hero section component
-    ├── Navbar.tsx      # Navigation bar component
-    └── Visitform.tsx   # Visit form component
-```
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
