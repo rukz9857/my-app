@@ -30,7 +30,7 @@ body {
 
 .hero {
   height: 500px;
-  background: url('/hello.png') no-repeat center center;
+  background: url('/hello.png.png') no-repeat center center;
   background-size: cover;
   background-position: center;
 }
