@@ -30,9 +30,11 @@ body {
 
 .hero {
   height: 500px;
+  background: url('/hello.png') no-repeat center center;
   background-size: cover;
   background-position: center;
 }
+
 
 .overlay {
   height: 100%;

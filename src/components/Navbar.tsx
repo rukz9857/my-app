@@ -15,6 +15,7 @@ export default function Navbar() {
             </ul>
 
             <button className="login-btn">
+                <img src="/group.png" alt="icon" style={{width: '20px', height: '20px', marginRight: '8px'}} />
                 Login / Signup
             </button>
         </nav>
