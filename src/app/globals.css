@@ -1,10 +1,13 @@
+@import "tailwindcss";
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #f9f9f9;
 }
 
+/* ── TOP UTILITY BAR ── */
 .header-wrapper {
   width: 100%;
   background: #ffffff;
@@ -12,7 +15,6 @@ body {
   z-index: 1000;
 }
 
-/* top bar with phone, location, icons */
 .top-utility-bar {
   display: flex;
   justify-content: space-between;
@@ -62,18 +64,16 @@ body {
   cursor: pointer;
 }
 
-/* the row that holds logo card on left, nav + promo on right */
+/* ── NAVBAR + PROMO ROW ── */
 .navbar-promo-row {
   display: flex;
   align-items: stretch;
   width: 100%;
   background: #F7F1EB;
-  padding-left: 0;
+  padding-left: 5%;
   box-sizing: border-box;
-  justify-content: center;
 }
 
-/* white logo box — sits tall, bleeds slightly down */
 .logo-card {
   background: #ffffff;
   padding: 10px 16px;
@@ -86,10 +86,8 @@ body {
   border-radius: 0 0 14px 0;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.06);
   margin-bottom: -2px;
-  margin-left: 0;
 }
 
-/* right side: nav row on top, promo banner below */
 .navbar-right {
   display: flex;
   flex-direction: column;
@@ -97,12 +95,13 @@ body {
 }
 
 .nav-top {
- display: flex;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 18px 4%;
   background: #F7F1EB;
-  gap: 40px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-links {
@@ -111,6 +110,7 @@ body {
   gap: 30px;
   margin: 0;
   padding: 0;
+  margin-right: 40px;
 }
 
 .nav-links li {
@@ -129,22 +129,20 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  padding: 8px 18px;
-  border-radius: 25px;
+  background: transparent;
+  border: none;
   font-size: 14px;
   font-weight: 500;
   color: #333333;
   cursor: pointer;
-  transition: all 0.2s ease;
+  margin-left: auto;
+  padding: 0;
 }
 
 .login-btn:hover {
-  background-color: #f4f4f4;
+  color: #8b0000;
 }
 
-/* red promo banner — only fills right side under nav */
 .promo-banner {
   background: linear-gradient(90deg, #8B0000 0%, #A31D1D 100%);
   color: #ffffff;
@@ -166,21 +164,18 @@ body {
 
 .promo-banner a {
   color: #ffffff;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 600;
   margin-left: auto;
   white-space: nowrap;
 }
 
-/* hero image section */
+/* ── HERO ── */
 .hero {
   position: relative;
   width: 100%;
   height: 75vh;
-  background-image: url('/hello.png.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .hero-container {
@@ -190,11 +185,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 5%;
   box-sizing: border-box;
+  z-index: 2;
 }
 
-/* dark overlay on hero image */
 .overlay {
   position: absolute;
   top: 0;
@@ -205,15 +200,16 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 120px 0 0;
+  padding: 0 8% 0 0;
   box-sizing: border-box;
   z-index: 1;
 }
 
-/* text block sits on the right side */
 .hero-text {
   max-width: 520px;
   text-align: left;
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -237,7 +233,7 @@ body {
 }
 
 .hero-btn {
-  background-color: #A31D1D;
+  background: linear-gradient(to right, #CF173C, #1E1E1E);
   color: #ffffff;
   border: none;
   padding: 12px 32px;
@@ -245,29 +241,27 @@ body {
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: opacity 0.2s ease;
   display: inline-block;
 }
 
 .hero-btn:hover {
-  background-color: #8B0000;
+  opacity: 0.9;
 }
 
 .nav-arrow {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  font-size: 24px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease;
-  color: #333333;
   flex-shrink: 0;
 }
 
@@ -276,7 +270,7 @@ body {
   transform: scale(1.08);
 }
 
-/* floating visit form card */
+/* ── VISIT FORM ── */
 .visit-form-container {
   width: 100%;
   display: flex;
@@ -284,7 +278,7 @@ body {
   position: relative;
   z-index: 10;
   margin-top: -60px;
-  padding: 0 20px;
+  padding: 0 5%;
   box-sizing: border-box;
 }
 
@@ -359,15 +353,14 @@ body {
   height: 80px;
   width: 80px;
   padding: 0;
-  background-color: #CF173C;
-  gradient: linear-gradient(135deg, #CF173C  90% , #1E1E1E 10%);
+  background: linear-gradient(to right, #CF173C, #1E1E1E);
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: opacity 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -376,15 +369,142 @@ body {
 }
 
 .request-btn:hover {
-  background-color: #CF173C;
+  opacity: 0.9;
 }
+
 .btn-icon {
   font-size: 16px;
 }
 
+/* ── BENEFITS SECTION ── */
+.benefits-section {
+  width: 100%;
+  padding: 60px 5%;
+  box-sizing: border-box;
+  background: #ffffff;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.benefits-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1E1E1E;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+}
+
+.benefits-subtitle {
+  font-size: 14px;
+  color: #CF173C;
+  margin: 0 0 40px 0;
+}
+
+/* grid — 5 columns to match Figma layout */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto 50px auto;
+}
+
+.benefit-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #ffffff;
+  transition: box-shadow 0.2s;
+  min-height: 160px;
+}
+
+.benefit-card:hover {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* active/highlighted card — crimson background */
+.benefit-card-active {
+  background: linear-gradient(135deg, #CF173C, #8B0000);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.benefit-card-active p {
+  color: #ffffff;
+}
+
+.benefit-card-active .benefit-icon {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+/* half card — partially visible on the right edge */
+.benefit-card-half {
+  opacity: 0.6;
+}
+
+.benefit-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #555555;
+}
+
+.benefit-card p {
+  font-size: 13px;
+  color: #333333;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ── NEED HELP ── */
+.benefits-help {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.benefits-help-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1E1E1E;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
+}
+
+.benefits-help-links {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.benefits-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #CF173C;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+}
+
+.benefits-link:hover {
+  opacity: 0.7;
+}
+
+/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .navbar-promo-row {
     flex-direction: column;
+    padding-left: 0;
   }
 
   .logo-card {
@@ -409,17 +529,13 @@ body {
   .hero-text {
     max-width: 100%;
   }
-}.logo-card {
-  background: #ffffff;
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 100;
-  min-width: unset;
-  border-radius: 0 0 14px 0;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.06);
-  margin-bottom: -2px;
-  margin-left: 5%;
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-help-links {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
