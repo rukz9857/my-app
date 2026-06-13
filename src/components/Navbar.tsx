@@ -2,9 +2,10 @@ import React from 'react';
 
 export default function Navbar() {
     return (
-        <header className="w-full bg-white relative z-[1000]">
+        <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 relative z-[1000] w-full">
 
-            <div className="flex justify-between items-center py-2 px-[5%] bg-[#fcfbfa] border-b border-[#eaeaea] text-[13px] text-[#555555]">
+            {/* Top Bar */}
+            <div className="flex justify-between items-center py-2 px-[5%] bg-[#fcfbfa] border-b border-[#eaeaea] text-[13px] text-[#555555] rounded-t-xl shadow-sm">
                 <div className="flex items-center gap-4">
                     <a href="tel:+9154345533" className="flex items-center gap-1.5 no-underline text-[#555555]">
                         <img src="/Vector.png" alt="call" className="w-4 h-4" />
@@ -29,14 +30,24 @@ export default function Navbar() {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-stretch w-full bg-[#F7F1EB] md:pl-[5%]">
+            {/* CHANGED: Removed md:pl-[5%] here so the main row snaps flush to the 
+              left boundary, perfectly mirroring the start point of your hero banner.
+            */}
+            <div className="flex flex-col md:flex-row items-stretch w-full bg-[#F7F1EB] rounded-b-xl overflow-hidden shadow-sm">
 
+                {/* Logo Container Area:
+                  Snaps to the left corner. If you want a tiny hint of spacing away from the edge, 
+                  you can change 'px-4' to 'pl-2 pr-4' depending on your layout preference.
+                */}
                 <div className="bg-white py-2 px-4 flex items-center justify-center relative z-[100] w-full md:w-auto rounded-none md:rounded-br-[14px] shadow-[2px_2px_8px_rgba(0,0,0,0.06)] mb-[-2px]">
                     <img src="/CoKarma_logo1 2.png" alt="CoKarma Logo" className="h-[100px] w-auto block" />
                 </div>
 
                 <div className="flex flex-col flex-1">
-                    <div className="flex justify-between items-center py-4 px-[4%] bg-[#F7F1EB] w-full">
+                    {/* CHANGED: Changed px-[4%] to pl-6 pr-8 so the navigation links 
+                      rest naturally adjacent to the logo without layout bloating.
+                    */}
+                    <div className="flex justify-between items-center py-4 pl-6 pr-8 bg-[#F7F1EB] w-full">
                         <ul className="flex list-none gap-[30px] m-0 p-0 mr-10">
                             <li className="text-[15px] font-medium text-[#333333] cursor-pointer hover:text-[#8b0000] transition-colors duration-200">Home</li>
                             <li className="text-[15px] font-medium text-[#333333] cursor-pointer hover:text-[#8b0000] transition-colors duration-200">Profile</li>
